@@ -1,16 +1,9 @@
 /*general styling*/
 
-.container_index {
-    text-align: center;
-    background-color: aqua;
-}
 
 /*index page*/
 
-.container_index {
+.index_container {
     margin-top: 20%;
     text-align: center;
-}
-.navigation li {
-    list-style: none;
 }
