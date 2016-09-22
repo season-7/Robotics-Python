@@ -1,7 +1,9 @@
-
 class Config():
-    DEBUG= True
-    HOST = '0.0.0.0'
+    DEBUG = True
+
+    @staticmethod
+    def init_app(app):
+        pass
 
 
 config = {'development': Config}
