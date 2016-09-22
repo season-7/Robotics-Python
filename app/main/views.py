@@ -1,8 +1,8 @@
-from app import app
+from . import main
 from flask import render_template
 
 
 #home route
-@app.route('/')
+@main.route('/')
 def home():
     return render_template('index.html')

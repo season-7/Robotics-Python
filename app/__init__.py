@@ -8,6 +8,7 @@ def create_app(config_name):
     config[config_name].init_app(app)
     from .api_1 import api as api
     app.register_blueprint(api, url_prefix='/api')
+    from .main import main as main_blueprint
+    app.register_blueprint(main_blueprint)
     return app
 
-from app import views
