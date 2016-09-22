@@ -1,5 +1,4 @@
 from flask import Flask
-from app import views
 
 def create_app():
     app = Flask(__name__)
@@ -7,4 +6,4 @@ def create_app():
     app.register_blueprint(api, url_prefix='/api')
     return app
 
-
+#import views
