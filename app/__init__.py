@@ -6,3 +6,5 @@ def create_app():
     from .api_1 import api as api
     app.register_blueprint(api, url_prefix='/api')
     return app
+
+from app import views
