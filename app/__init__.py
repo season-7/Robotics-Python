@@ -10,4 +10,4 @@ def create_app(config_name):
     app.register_blueprint(api, url_prefix='/api')
     return app
 
-#import views
+from app import views
