@@ -1,25 +1,21 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Todo App</title>
-        <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='css/materialize.min.css') }}" media="screen,projection" />
-        <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
-        <link href="//fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <link href="//fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    </head>
-    <body>
-        {% with messages = get_flashed_messages() %}
-        {% if messages %}
-            <ul>
-                {% for message in messages %}
-                    <li>{{ message }} </li>
-                {% endfor %}
-            </ul>
-        {% endif %}
-    {% endwith %}
-    <script type="text/javascript" src="{{ url_for('static', filename='js/jquery-3.0.0.js') }}"></script>
-    <script type="text/javascript" src="{{ url_for('static', filename='js/materialize.min.js') }}"></script>
-    <script type="text/javascript" src="{{ url_for('static', filename='js/script.js') }}"></script>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Trivia - {{page}} </title>
+
+    <link rel="stylesheet" href="{{url_for('static', filename ='css/app.css' )}}">
+    <link rel="stylesheet" href="{{url_for('static', filename = 'css/foundation.min.css')}}">
+</head>
+
+<body>
+    {% block content %} {% endblock %}
+
 </body>
+<script src="{{url_for('static', filename = 'js/vendor/jquery.js')}}"></script>
+<script src="{{url_for('static', filename = 'js/vendor/what-input.js')}}"></script>
+<script src="{{url_for('static', filename = 'js/vendor/foundation.min.js')}}"></script>
+<script src="{{url_for('static', filename = 'js/app.js')}}"></script>
+
 </html>

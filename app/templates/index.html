@@ -1,14 +1,20 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Todo App</title>
-        <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='css/materialize.min.css') }}" media="screen,projection" />
-        <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
-        <link href="//fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <link href="//fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    </head>
-    <body>
-    <h1>Hello World</h1>
-    </body>
-</html>
+{% extends "base.html" %} {% block content %}
+<div class="container_index large-centered small-12 large-4 columns">
+    <header>
+
+        <h2>Welcome to the <br>TRIVIA game</h2>
+
+    </header>
+    <section class="index_main">
+        <ul class="navigation">
+            <li>
+                <a href="{{url_for('create')}}">Create a question</a>
+            </li>
+            <li>
+                <a href="{{url_for('answer', title = title)}}">Answer a question</a>
+            </li>
+        </ul>
+
+    </section>
+</div>
+{% endblock %}
