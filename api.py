@@ -1,4 +1,5 @@
 from flask import Flask, jsonify, abort, make_response, url_for
+from publish import left, right
 
 app = Flask(__name__)
 
@@ -30,6 +31,18 @@ def get_tasks():
 @app.errorhandler(404)
 def not_found(error):
     return make_response(jsonify({'error': 'Not Found'}), 404)
+
+
+@app.route('/pi/api/tasks/1', methods=['GET'])
+def left_command():
+    left()
+    return jsonify(tasks[0])
+
+
+@app.route('/pi/api/tasks/2', methods=['GET'])
+def right_command():
+    right()
+    return jsonify(tasks[1])
 
 
 def make_public_task(task):
