@@ -1,7 +1,9 @@
-from flask import Flask, jsonify, abort, make_response, url_for
+from . import app, auth
+from .models import User
+from flask import jsonify, make_response, url_for, g
+
 from publish import left, right
 
-app = Flask(__name__)
 
 tasks = [
     {
@@ -23,7 +25,7 @@ tasks = [
 ]
 
 
-@app.route('/pi/api/tasks', methods=['GET'])
+@app.route('/pi/app/tasks', methods=['GET'])
 def get_tasks():
     return jsonify({'tasks': [make_public_task(task) for task in tasks]})
 
@@ -33,13 +35,13 @@ def not_found(error):
     return make_response(jsonify({'error': 'Not Found'}), 404)
 
 
-@app.route('/pi/api/tasks/1', methods=['GET'])
+@app.route('/pi/app/tasks/1', methods=['GET'])
 def left_command():
     left()
     return jsonify(tasks[0])
 
 
-@app.route('/pi/api/tasks/2', methods=['GET'])
+@app.route('/pi/app/tasks/2', methods=['GET'])
 def right_command():
     right()
     return jsonify(tasks[1])
@@ -53,7 +55,3 @@ def make_public_task(task):
         else:
             new_task[field] = task[field]
     return new_task
-
-
-if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0')
