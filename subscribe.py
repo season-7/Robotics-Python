@@ -9,6 +9,15 @@ def on_connect(client, userdata, rc):
 def on_message(client, userdata, msg):
     print "Topic: ", msg.topic + "\nMessage: " + str(msg.payload)
 
+    if msg.topic == 'left/left':
+        pass
+    elif msg.topic == 'right/right':
+        pass
+    elif msg.topic == 'foward/foward':
+        pass
+    else:
+        pass
+
 
 client = mqtt.Client()
 client.on_connect = on_connect
