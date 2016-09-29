@@ -27,7 +27,7 @@ tasks = [
 @auth.verify_password
 def verify_password(username, password):
     user = User.query.filter_by(username=username).first()
-    if not user or not user.password:
+    if not user or not user.verify_password(password):
         return False
     g.user = user
     return True
@@ -51,12 +51,14 @@ def not_found(error):
 
 
 @app.route('/pi/app/tasks/1', methods=['GET'])
+@auth.login_required
 def left_command():
     left()
     return jsonify(tasks[0])
 
 
 @app.route('/pi/app/tasks/2', methods=['GET'])
+@auth.login_required
 def right_command():
     right()
     return jsonify(tasks[1])
