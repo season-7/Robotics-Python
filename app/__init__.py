@@ -6,8 +6,7 @@ from flask_httpauth import HTTPBasicAuth
 
 app = Flask(__name__)
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://john:root@localhost/pi'
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+app.config.from_object('config')
 db = SQLAlchemy(app)
 
 migrate = Migrate(app, db)

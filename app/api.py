@@ -64,6 +64,24 @@ def right_command():
     return jsonify(tasks[1])
 
 
+@app.route('/pi/app/task/3', method= ['GET'])
+@auth.login_required
+def foward_command():
+    foward()
+    return jsonify(tasks[2])
+
+
+@app.route('/pi/app/task/4', method= ['GET'])
+@auth.login_required
+def reverse_command():
+    reverse()
+    return jsonify(tasks[3])
+
+
+
+
+
+
 def make_public_task(task):
     new_task = {}
     for field in task:
