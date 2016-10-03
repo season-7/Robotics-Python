@@ -66,7 +66,7 @@ def right_command():
 
 
 # handles forward task
-@app.route('/pi/app/task/3', methods=['GET'])
+@app.route('/pi/app/tasks/3', methods=['GET'])
 @auth.login_required
 def foward_command():
     foward()
@@ -74,7 +74,7 @@ def foward_command():
 
 
 # handles reverse task
-@app.route('/pi/app/task/4', methods=['GET'])
+@app.route('/pi/app/tasks/4', methods=['GET'])
 @auth.login_required
 def reverse_command():
     reverse()
