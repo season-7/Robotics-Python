@@ -54,7 +54,7 @@ def not_found(error):
 @auth.login_required
 def left_command():
     left()
-    return jsonify(tasks[1])
+    return jsonify(tasks[0])
 
 
 # handles right task
@@ -62,7 +62,7 @@ def left_command():
 @auth.login_required
 def right_command():
     right()
-    return jsonify(tasks[2])
+    return jsonify(tasks[1])
 
 
 # handles forward task
@@ -70,7 +70,7 @@ def right_command():
 @auth.login_required
 def foward_command():
     foward()
-    return jsonify(tasks[3])
+    return jsonify(tasks[2])
 
 
 # handles reverse task
@@ -78,4 +78,4 @@ def foward_command():
 @auth.login_required
 def reverse_command():
     reverse()
-    return jsonify(tasks[4])
+    return jsonify(tasks[3])
