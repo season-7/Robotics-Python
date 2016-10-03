@@ -2,7 +2,7 @@ from . import app, auth
 from .models import User
 from flask import jsonify, make_response, url_for, g
 
-from publish import left, right
+from publish import left, right, foward, reverse
 
 tasks = [
     {
@@ -36,7 +36,7 @@ def verify_password(username, password):
 @app.route('/pi/app/test')
 @auth.login_required
 def get_resource():
-    return jsonify({'data': 'Hello, %s!' % g.user.username})
+    return jsonify({'message': 'Hello, %s!' % g.user.username})
 
 
 @app.route('/pi/app/tasks', methods=['GET'])
@@ -54,28 +54,28 @@ def not_found(error):
 @auth.login_required
 def left_command():
     left()
-    return jsonify(tasks[0])
+    return jsonify(tasks[1])
 
 
 @app.route('/pi/app/tasks/2', methods=['GET'])
 @auth.login_required
 def right_command():
     right()
-    return jsonify(tasks[1])
+    return jsonify(tasks[2])
 
 
 @app.route('/pi/app/task/3', methods=['GET'])
 @auth.login_required
 def foward_command():
     foward()
-    return jsonify(tasks[2])
+    return jsonify(tasks[3])
 
 
 @app.route('/pi/app/task/4', methods=['GET'])
 @auth.login_required
 def reverse_command():
     reverse()
-    return jsonify(tasks[3])
+    return jsonify(tasks[4])
 
 
 def make_public_task(task):

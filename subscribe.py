@@ -3,7 +3,7 @@ import paho.mqtt.client as mqtt
 
 def on_connect(client, userdata, rc):
     print "Connected with result code " + str(rc)
-    client.subscribe([('left/left', 1), ('right/right', 1)])
+    client.subscribe([('left/left', 1), ('right/right', 1), ('foward/foward', 1), ('reverse/reverse', 1)])
 
 
 def on_message(client, userdata, msg):
