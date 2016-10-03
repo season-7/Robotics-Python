@@ -1,13 +1,20 @@
 from app import app
+import json
 import unittest
-from flask import url_for
+from flask import url_for, current_app, redirect
 
 
 class ApiTestCase(unittest.TestCase):
 
+    def setUp(self):
+        self.app = app.test_client()
+        self.app.testing = True
+
+    def tearDown(self):
+        pass
+
     def test_no_auth(self):
-        tester = app.test_client(self)
-        response = tester.get(url_for('app.get_tasks'), content_type='application/json')
+        response = self.app.get('/pi/app/tasks', content_type='application/json')
         self.assertTrue(response.status_code, 401)
 
 
