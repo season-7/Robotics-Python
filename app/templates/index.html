@@ -1,4 +1,13 @@
-{% extends "base.html" %} {% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pi Drive</title>
+    <link rel="stylesheet" href="{{url_for('static', filename = 'css/foundation.min.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename ='css/app.css' )}}">
+
+</head>
+<body>
 <div class="index_container large-centered small-12 large-4 columns">
     <header>
 
@@ -18,9 +27,12 @@
         </div>
 
     </section>
-    <section class="Response">
-        <h2>Resonse</h2>
-        <p></p>
+    <section id="response">
+        <h2>Response</h2>
+        <!--<p></p>-->
     </section>
 </div>
-{% endblock %}
+<script type="text/javascript" src="{{ url_for('static', filename='js/jquery-3.1.1.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+</body>
+</html>
