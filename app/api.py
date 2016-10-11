@@ -27,20 +27,22 @@ tasks = [
 
 
 # authentication
-@auth.verify_password
-def verify_password(username, password):
-    user = User.query.filter_by(username=username).first()
-    if not user or not user.verify_password(password):
-        return False
-    g.user = user
-    return True
+# @auth.verify_password
+# def verify_password(username, password):
+#     user = User.query.filter_by(username=username).first()
+#     if not user or not user.verify_password(password):
+#         return False
+#     g.user = user
+#     return True
 
 
 # returns all the tasks
 @app.route('/pi/app/tasks', methods=['GET'])
-@auth.login_required
+# @auth.login_required
 def get_tasks():
-    return jsonify(tasks)
+    response = jsonify(tasks)
+    response.headers.add('Access-Control-Allow-Origin', '*')
+    return response
 
 
 # handles 404 error
@@ -51,31 +53,39 @@ def not_found(error):
 
 # handles left task
 @app.route('/pi/app/tasks/1', methods=['GET'])
-@auth.login_required
+# @auth.login_required
 def left_command():
     left()
-    return jsonify(tasks[0])
+    response = jsonify(tasks[0])
+    response.headers.add('Access-Control-Allow-Origin', '*')
+    return response
 
 
 # handles right task
 @app.route('/pi/app/tasks/2', methods=['GET'])
-@auth.login_required
+# @auth.login_required
 def right_command():
     right()
-    return jsonify(tasks[1])
+    response = jsonify(tasks[1])
+    response.headers.add('Access-Control-Allow-Origin', '*')
+    return response
 
 
 # handles forward task
 @app.route('/pi/app/tasks/3', methods=['GET'])
-@auth.login_required
+# @auth.login_required
 def foward_command():
     foward()
-    return jsonify(tasks[2])
+    response = jsonify(tasks[2])
+    response.headers.add('Access-Control-Allow-Origin', '*')
+    return response
 
 
 # handles reverse task
 @app.route('/pi/app/tasks/4', methods=['GET'])
-@auth.login_required
+# @auth.login_required
 def reverse_command():
     reverse()
-    return jsonify(tasks[3])
+    response = jsonify(tasks[3])
+    response.headers.add('Access-Control-Allow-Origin', '*')
+    return response
