@@ -7,7 +7,7 @@
 
 var action = {
     leftAction: function () {
-        $.ajax('http://192.168.1.48:8000/pi/app/tasks/1', {
+        $.ajax('http://192.168.0.49:8000/pi/app/tasks/1', {
             dataType: 'json',
             success: function (response) {
                 console.log(response.description);
@@ -19,7 +19,7 @@ var action = {
         });
     },
     rightAction: function () {
-        $.ajax('http://192.168.1.48:8000/pi/app/tasks/2', {
+        $.ajax('http://192.168.0.49:8000/pi/app/tasks/2', {
             dataType: 'json',
             success: function (response) {
                 console.log(response.description);
@@ -31,7 +31,7 @@ var action = {
         })
     },
     forwardAction: function () {
-        $.ajax('http://192.168.1.48:8000/pi/app/tasks/3', {
+        $.ajax('http://192.168.0.49:8000/pi/app/tasks/3', {
             dataType: 'json',
             success: function (response) {
                 console.log(response.description);
@@ -43,7 +43,7 @@ var action = {
         })
     },
     reverseAction: function () {
-        $.ajax('http://192.168.1.48:8000/pi/app/tasks/4', {
+        $.ajax('http://192.168.0.49:8000/pi/app/tasks/4', {
             dataType: 'json',
             success: function (response) {
                 console.log(response.description);
@@ -56,10 +56,10 @@ var action = {
     }
 };
 
-$(document).ready(function() {
-    // alert("Hello World");
-	$(document).on('keydown', function (e) {
-	    switch (e.keyCode) {
+$(document).ready(function () {
+    //alert("Hello World");
+    $(document).on('keydown', function (e) {
+        switch (e.keyCode) {
             case 37:
                 action.leftAction();
                 break;
