@@ -1,1 +1,14 @@
+/*container*/
 
+.container {
+    text-align: center;
+}
+#mobile {
+    display: none;
+}
+
+/*video feed*/
+
+video {
+    width: 70%;
+}
