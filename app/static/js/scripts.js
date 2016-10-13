@@ -1,6 +1,6 @@
 var action = {
     Action: function (index) {
-        $.ajax('http://192.168.1.35:8000/pi/app/tasks/' + index, {
+        $.ajax('http://192.168.1.43:8000/pi/app/tasks/' + index, {
             dataType: 'json',
             success: function (response) {
                 console.log(response.description);
