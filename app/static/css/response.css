@@ -20,7 +20,7 @@ header h4 {
 /*navigation*/
 
 #navigation {
-    margin-top: 25%;
+    margin-top: 20%;
 }
 #navigation .button {
     background-color: hotpink;
@@ -47,4 +47,7 @@ header h4 {
 }
 #link p {
     font-size: 400%;
+}
+#link a {
+    color: hotpink;
 }
