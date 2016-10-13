@@ -51,3 +51,28 @@ header h4 {
 #link a {
     color: hotpink;
 }
+
+/*landscape*/
+
+@media only screen and (orientation:landscape) {
+    /*header*/
+    header {
+        display: none;
+    }
+    /*navigation*/
+    #navigation {
+        margin-top: 3%;
+    }
+    #navigation .button {
+        padding: 2% 10%;
+    }
+    #turn {
+        margin: 5% 0;
+    }
+    #left {
+        margin-right: 15%;
+    }
+    #right {
+        margin-left: 15%;
+    }
+}
