@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Pi Drive</title>
@@ -7,32 +8,34 @@
     <link rel="stylesheet" href="{{url_for('static', filename ='css/app.css' )}}">
 
 </head>
+
 <body>
-<div class="index_container large-centered small-12 large-4 columns">
-    <header>
+    <div class="index_container large-centered small-12 large-4 columns">
+        <header>
+            <h2>Pi Drive</h2>
+        </header>
+        <section id="camera" class="large-12 columns">
 
-        <h2>Pi Drive</h2>
+        </section>
+        <section id="navigation" class="small-12 columns">
+            <div id="go">
+                <button class="button">Forward</button>
+            </div>
+            <div id="turn">
+                <button id="left" class="button">Left</button>
+                <button id="right" class="button">Right</button>
+            </div>
+            <div id="back">
+                <button class="button">Reverse</button>
+            </div>
 
-    </header>
-    <section class="navigation">
-        <div id="go">
-            <button class="button">Forward</button>
-        </div>
-        <div id="turn">
-            <button id="left" class="button">Left</button>
-            <button id="right" class="button">Right</button>
-        </div>
-        <div id="back">
-            <button class="button">Reverse</button>
-        </div>
-
-    </section>
-    <section id="response">
-        <h2>Response</h2>
-        <!--<p></p>-->
-    </section>
-</div>
-<script type="text/javascript" src="{{ url_for('static', filename='js/jquery-3.1.1.js') }}"></script>
-<script type="text/javascript" src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+        </section>
+        <section id="link" class="small-12 columns">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti officiis recusandae ea deleniti nisi. Facere deserunt blanditiis aperiam ipsa. Molestiae quasi animi officia beatae dolor, minima laboriosam nemo voluptas facilis.</p>
+        </section>
+    </div>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/jquery-3.1.1.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/scripts.js') }}"></script>
 </body>
+
 </html>
