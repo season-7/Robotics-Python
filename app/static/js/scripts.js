@@ -15,7 +15,7 @@ var action = {
 
 $(document).ready(function () {
     var mq = window.matchMedia("(max-device-width:800px)").matches;
-    if (mq == true) {
+    if (mq === false) {
         //key press function
         $(document).on('keydown', function (e) {
             switch (e.keyCode) {
