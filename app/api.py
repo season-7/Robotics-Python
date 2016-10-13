@@ -99,7 +99,8 @@ def reverse_command():
 @app.route('/pi/app/tasks/gear', methods=['GET'])
 # @auth.login_required
 def gear_command():
-    gear = request.data
+    gear = request.args
     response = jsonify(tasks[4])
     response.headers.add('Access-Control-Allow-Origin', '*')
+    print gear
     return response
