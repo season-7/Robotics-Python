@@ -6,3 +6,19 @@
 #mobile {
     display: block;
 }
+
+/*header*/
+
+header img {
+    height: 25%;
+    width: 25%;
+}
+header h4 {
+    font-size: 250%;
+}
+
+/*navigation*/
+
+#navigation .button {
+    font-size: 300%;
+}
