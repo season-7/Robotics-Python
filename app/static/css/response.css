@@ -23,8 +23,12 @@ header h4 {
     margin-top: 25%;
 }
 #navigation .button {
+    background-color: hotpink;
     font-size: 500%;
     padding: 5% 15%;
+}
+#navigation .button:focus {
+    background-color: hotpink;
 }
 #turn {
     margin: 12% 0;
