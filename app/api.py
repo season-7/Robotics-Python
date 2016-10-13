@@ -22,6 +22,10 @@ tasks = [
     {
         'id': 4,
         'description': 'reverse'
+    },
+    {
+        'id':5,
+        'description' :'gear'
     }
 ]
 
@@ -94,7 +98,8 @@ def reverse_command():
 # handles gears
 @app.route('/pi/app/tasks/gear', methods=['GET'])
 # @auth.login_required
-def reverse_command():
-    gear = request.get.data
-    print gear
-    return gear
+def gear_command():
+    gear = request.data
+    response = jsonify(tasks[4])
+    response.headers.add('Access-Control-Allow-Origin', '*')
+    return response
