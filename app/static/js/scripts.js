@@ -82,19 +82,15 @@ $(document).ready(function () {
         //button press function
         $('#forward').on('taphold', function () {
             action.Action(3);
-            console.log('sup sup');
         });
         $('#left').on('taphold', function () {
             action.Action(1);
-            console.log('sup sup');
         });
         $('#right').on('taphold', function () {
             action.Action(2);
-            console.log('sup sup');
         });
         $('#reverse').on('taphold', function () {
             action.Action(4);
-            console.log('sup sup');
         });
     }
 });
