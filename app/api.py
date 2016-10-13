@@ -96,5 +96,5 @@ def reverse_command():
 # @auth.login_required
 def reverse_command():
     gear = request.get.data
-    change(gear)
+    print gear
     return gear
