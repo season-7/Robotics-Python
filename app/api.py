@@ -1,6 +1,6 @@
 from . import app, auth
 from .models import User
-from flask import jsonify, make_response, url_for, g
+from flask import jsonify, make_response, url_for, g, request
 
 from publish import left, right, foward, reverse
 
@@ -22,6 +22,10 @@ tasks = [
     {
         'id': 4,
         'description': 'reverse'
+    },
+    {
+        'id':5,
+        'description' :'gear'
     }
 ]
 
@@ -88,4 +92,15 @@ def reverse_command():
     reverse()
     response = jsonify(tasks[3])
     response.headers.add('Access-Control-Allow-Origin', '*')
+    return response
+
+
+# handles gears
+@app.route('/pi/app/tasks/gear', methods=['GET'])
+# @auth.login_required
+def gear_command():
+    gear = request.args
+    response = jsonify(tasks[4])
+    response.headers.add('Access-Control-Allow-Origin', '*')
+    print gear.get('currentGear')
     return response
