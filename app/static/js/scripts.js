@@ -1,9 +1,4 @@
-//speed handling
-//gear variable
-var gears = [1, 2, 3, 4, 5];
-//gear logic
-var currentGear = 0;
-//ajax handling
+/*ajax handling*/
 var action = {
     Action: function (index) {
         $.ajax('http://192.168.1.43:8000/pi/app/tasks/' + index, {
@@ -34,6 +29,9 @@ var action = {
         });
     }
 };
+/*speed handling*/
+//default gear
+var currentGear = 0;
 
 $(document).ready(function () {
     //media query function
@@ -57,7 +55,7 @@ $(document).ready(function () {
                 case 65:
                     //upshifting
                     if (currentGear < 5) {
-                        currentGear ++;
+                        currentGear++;
                         action.Gears(currentGear);
                         alert(currentGear);
                     } else {
@@ -69,7 +67,7 @@ $(document).ready(function () {
                 case 90:
                     //downshifting
                     if (currentGear > 0) {
-                        currentGear --;
+                        currentGear--;
                         action.Gears(currentGear);
                         alert(currentGear);
                     } else {
