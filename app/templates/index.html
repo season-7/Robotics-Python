@@ -1,38 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Pi Drive</title>
+    <!--css links-->
     <link rel="stylesheet" href="{{url_for('static', filename = 'css/foundation.min.css')}}">
     <link rel="stylesheet" href="{{url_for('static', filename ='css/app.css' )}}">
-
+    <link rel="stylesheet" media="only screen and (max-device-width:800px)" href="{{url_for('static', filename ='css/response.css' )}}">
+    <!--font links-->
+    <link href="https://fonts.googleapis.com/css?family=Bungee+Inline|Roboto+Mono" rel="stylesheet">
+    <!--link to ionicons-->
+    <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
 </head>
+
 <body>
-<div class="index_container large-centered small-12 large-4 columns">
-    <header>
-
-        <h2>Pi Drive</h2>
-
-    </header>
-    <section class="navigation">
-        <div id="go">
-            <button class="button">Forward</button>
+    <div class="container small-12 columns">
+        <header>
+            <img src="{{url_for('static', filename='img/logo.png')}}" alt="">
+            <h4>Pi Drive</h4>
+        </header>
+        <div id="web">
+            <section id="camera" class="large-12 columns row expanded">
+                <video src="" autoplay controls></video>
+            </section>
+            <section id="instruction" class="large-12 columns">
+                <p>
+                    Use the keyboard direction to control the car. The car uses a Real-Automatic gearbox. If you want to reverse and are currently moving forward, press the back button twice and then accelerate backwards with the up key. If at standstill, press the back button once and accelerate backwards using the up key.
+                    <br>To move forward in reverse state, press the back key once to stop, then accelerate forward ussing the up key.
+                </p>
+            </section>
         </div>
-        <div id="turn">
-            <button id="left" class="button">Left</button>
-            <button id="right" class="button">Right</button>
-        </div>
-        <div id="back">
-            <button class="button">Reverse</button>
-        </div>
+        <div id="mobile">
+            <section id="navigation" class="small-12 columns">
+                <div id="go">
+                    <button class="button"><i class="ion-ios-arrow-up"></i></button>
+                </div>
+                <div id="turn">
+                    <button id="left" class="button"><i class="ion-ios-arrow-back"></i></button>
+                    <button id="right" class="button"><i class="ion-ios-arrow-forward"></i></button>
+                </div>
+                <div id="back">
+                    <button class="button"><i class="ion-ios-arrow-down"></i></button>
+                </div>
 
-    </section>
-    <section id="response">
-        <h2>Response</h2>
-        <!--<p></p>-->
-    </section>
-</div>
-<script type="text/javascript" src="{{ url_for('static', filename='js/jquery-3.1.1.js') }}"></script>
-<script type="text/javascript" src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+            </section>
+            <section id="link" class="small-12 columns">
+                <p>For a better experince, <a href="">download</a> our android app.</p>
+            </section>
+        </div>
+    </div>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/jquery-3.1.1.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/scripts.js') }}"></script>
 </body>
+
 </html>

@@ -1,9 +1,31 @@
-/*general styling*/
+/*container*/
 
-
-/*index page*/
-
-.index_container {
-    margin-top: 20%;
+.container {
     text-align: center;
+}
+#mobile {
+    display: none;
+}
+
+/*header*/
+
+header img {
+    height: 8%;
+    width: 8%;
+}
+header h4 {
+    font-family: 'Bungee Inline', cursive;
+    color: deeppink;
+}
+
+/*video feed*/
+
+video {
+    width: 70%;
+}
+
+/*instructions*/
+
+#instruction {
+    font-family: 'Roboto Mono', monospace;
 }

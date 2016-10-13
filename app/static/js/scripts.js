@@ -20,10 +20,10 @@ var action = {
     }
 };
 
-$(document).ready(function() {
-    // alert("Hello World");
-	$(document).on('keydown', function (e) {
-	    switch (e.keyCode) {
+$(document).ready(function () {
+    //alert("Hello World");
+    $(document).on('keydown', function (e) {
+        switch (e.keyCode) {
             case 37:
                 action.Action(1);
                 break;
