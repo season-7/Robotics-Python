@@ -1,6 +1,8 @@
 //speed handling
 //gear variable
 var gears = [1, 2, 3, 4, 5];
+//gear logic
+var currentGear = 0;
 //ajax handling
 var action = {
     Action: function (index) {
@@ -15,11 +17,12 @@ var action = {
             }
         });
     },
-    Gears: function (speed) {
+    Gears: function (speed=0) {
         $.ajax('http://192.168.1.43:8000/pi/app/tasks/gear', {
             dataType: 'json',
             success: function (response) {
                 console.log(response.description);
+                console.log(currentGear);
             },
             error: function (message) {
                 $('#response').html(message);
@@ -31,35 +34,10 @@ var action = {
         });
     }
 };
-console.log(currentGear);
 
-//gear logic
-var currentGear = 0;
-var gearCounter = 0;
+
 $(document).ready(function () {
-    //keypress speed
-    $(document).on("keydown", function (w) {
-        switch (w.keyCode) {
-            case 65:
-                //upshifting
-                if (currentGear < gears.length) {
-                    currentGear = gears[gearCounter] + gears[gearCounter + 1];
-                    action.Gears(currentGear);
-                    console.log(currentGear);
-                } else {
-                    currentGear = gears[4];
-                }
-                break;
-            case 90:
-                //downshifting
-                if (currentGear > gears[0]) {
-                    currentGear = gears[gearCounter] + gears[gearCounter - 1];
-                } else {
-                    currentGear = 0;
-                }
-                break;
-        }
-    });
+
 
     //media query function
     var mq = window.matchMedia("(max-device-width:800px)").matches;
@@ -78,6 +56,30 @@ $(document).ready(function () {
                     break;
                 case 40:
                     action.Action(4);
+                    break;
+                case 65:
+                    //upshifting
+                    if (currentGear < 5) {
+                        currentGear ++;
+                        action.Gears(currentGear);
+                        alert(currentGear);
+                    } else {
+                        currentGear = 5;
+                        action.Gears(currentGear);
+                        alert(currentGear);
+                    }
+                    break;
+                case 90:
+                    //downshifting
+                    if (currentGear > 0) {
+                        currentGear --;
+                        action.Gears(currentGear);
+                        alert(currentGear);
+                    } else {
+                        currentGear = 0;
+                        action.Gears(currentGear);
+                        alert(currentGear);
+                    }
                     break;
             }
         });
