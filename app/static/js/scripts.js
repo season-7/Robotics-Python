@@ -14,7 +14,7 @@ var action = {
 };
 
 $(document).ready(function () {
-    //alert("Hello World");
+    //key press function
     $(document).on('keydown', function (e) {
         switch (e.keyCode) {
             case 37:
@@ -31,5 +31,18 @@ $(document).ready(function () {
                 break;
         }
 
+    });
+    //button press function
+    $('#forward').on('taphold', function () {
+        action.Action(3);
+    });
+    $('#left').on('taphold', function () {
+        action.Action(1);
+    });
+    $('#right').on('taphold', function () {
+        action.Action(2);
+    });
+    $('#reverse').on('taphold', function () {
+        action.Action(4);
     });
 });
