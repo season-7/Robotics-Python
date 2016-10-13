@@ -35,3 +35,12 @@ header h4 {
 #right {
     margin-left: 12%;
 }
+
+/*link*/
+
+#link {
+    margin-top: 15%;
+}
+#link p {
+    font-size: 400%;
+}
