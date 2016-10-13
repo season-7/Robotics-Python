@@ -4,16 +4,19 @@
 <head>
     <meta charset="UTF-8">
     <title>Pi Drive</title>
+    <!--css links-->
     <link rel="stylesheet" href="{{url_for('static', filename = 'css/foundation.min.css')}}">
     <link rel="stylesheet" href="{{url_for('static', filename ='css/app.css' )}}">
-
+    <!--font links-->
+    <link href="https://fonts.googleapis.com/css?family=Bungee+Inline|Roboto+Mono" rel="stylesheet">
 </head>
 
 <body>
     <div class="container small-12 columns">
         <div id="web">
             <header>
-                <h2>Pi Drive</h2>
+                <img src="{{url_for('static', filename='img/logo.png')}}" alt="">
+                <h4>Pi Drive</h4>
             </header>
             <section id="camera" class="large-12 columns row expanded">
                 <video src="" autoplay controls></video>
