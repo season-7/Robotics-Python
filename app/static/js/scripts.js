@@ -51,7 +51,6 @@ $(document).ready(function () {
         $('#reverse').on('taphold', function () {
             action.Action(4);
             console.log('sup sup');
-
         });
         console.log(mq);
     }
