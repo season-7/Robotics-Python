@@ -32,7 +32,6 @@ $(document).ready(function () {
                     action.Action(4);
                     break;
             }
-            console.log(mq);
         });
     } else {
         //button press function
@@ -52,8 +51,5 @@ $(document).ready(function () {
             action.Action(4);
             console.log('sup sup');
         });
-        console.log(mq);
     }
-
-
 });
