@@ -1,6 +1,6 @@
 from . import app, auth
 from .models import User
-from flask import jsonify, make_response, url_for, g
+from flask import jsonify, make_response, url_for, g, request
 
 from publish import left, right, foward, reverse
 
@@ -89,3 +89,12 @@ def reverse_command():
     response = jsonify(tasks[3])
     response.headers.add('Access-Control-Allow-Origin', '*')
     return response
+
+
+# handles gears
+@app.route('/pi/app/tasks/gear', methods=['GET'])
+# @auth.login_required
+def reverse_command():
+    gear = request.get.data
+    change(gear)
+    return gear
