@@ -56,7 +56,7 @@ $(document).ready(function () {
                 case 65:
                     //upshifting
                     if (currentGear < 5) {
-                        currentGear ++;
+                        currentGear++;
                         action.Gears(currentGear);
                         alert(currentGear);
                     } else {
@@ -68,7 +68,7 @@ $(document).ready(function () {
                 case 90:
                     //downshifting
                     if (currentGear > 0) {
-                        currentGear --;
+                        currentGear--;
                         action.Gears(currentGear);
                         alert(currentGear);
                     } else {
@@ -83,19 +83,15 @@ $(document).ready(function () {
         //button press function
         $('#forward').on('taphold', function () {
             action.Action(3);
-            console.log('sup sup');
         });
         $('#left').on('taphold', function () {
             action.Action(1);
-            console.log('sup sup');
         });
         $('#right').on('taphold', function () {
             action.Action(2);
-            console.log('sup sup');
         });
         $('#reverse').on('taphold', function () {
             action.Action(4);
-            console.log('sup sup');
         });
     }
 });
