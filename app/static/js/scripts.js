@@ -16,21 +16,22 @@ var action = {
         });
     },
     Gears: function (speed) {
-        $.ajax('http://192.168.1.35:8000/pi/app/tasks/gear' {
+        $.ajax('http://192.168.1.43:8000/pi/app/tasks/gear', {
             dataType: 'json',
             success: function (response) {
                 console.log(response.description);
             },
             error: function (message) {
                 $('#response').html(message);
-                console.log('error');
+                console.log(currentGear);
             },
             data: {
                 currentGear: currentGear
             }
         });
-    };
+    }
 };
+console.log(currentGear);
 
 //gear logic
 var currentGear = 0;
@@ -43,6 +44,8 @@ $(document).ready(function () {
                 //upshifting
                 if (currentGear < gears.length) {
                     currentGear = gears[gearCounter] + gears[gearCounter + 1];
+                    action.Gears(currentGear);
+                    console.log(currentGear);
                 } else {
                     currentGear = gears[4];
                 }
