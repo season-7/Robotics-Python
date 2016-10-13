@@ -1,6 +1,3 @@
-//speed handling
-//gear variable
-var gears = [1, 2, 3, 4, 5];
 //ajax handling
 var action = {
     Action: function (index) {
@@ -16,7 +13,7 @@ var action = {
         });
     },
     Gears: function (speed) {
-        $.ajax('http://192.168.1.35:8000/pi/app/tasks/gear' {
+        $.ajax('http://192.168.1.35:8000/pi/app/tasks/gear', {
             dataType: 'json',
             success: function (response) {
                 console.log(response.description);
@@ -29,14 +26,15 @@ var action = {
                 currentGear: currentGear
             }
         });
-    };
+    }
 };
-
+//speed handling
 //gear logic
 var currentGear = 0;
 var gearCounter = 0;
 $(document).ready(function () {
-
+    //gear variable
+    var gears = [1, 2, 3, 4, 5];
     //media query function
     var mq = window.matchMedia("(max-device-width:800px)").matches;
     if (mq === false) {
