@@ -36,27 +36,6 @@ var action = {
 var currentGear = 0;
 var gearCounter = 0;
 $(document).ready(function () {
-    //keypress speed
-    $(document).on("keydown", function (w) {
-        switch (w.keyCode) {
-            case 65:
-                //upshifting
-                if (currentGear < gears.length) {
-                    currentGear = gears[gearCounter] + gears[gearCounter + 1];
-                } else {
-                    currentGear = gears[4];
-                }
-                break;
-            case 90:
-                //downshifting
-                if (currentGear > gears[0]) {
-                    currentGear = gears[gearCounter] + gears[gearCounter - 1];
-                } else {
-                    currentGear = 0;
-                }
-                break;
-        }
-    });
 
     //media query function
     var mq = window.matchMedia("(max-device-width:800px)").matches;
@@ -75,6 +54,22 @@ $(document).ready(function () {
                     break;
                 case 40:
                     action.Action(4);
+                    break;
+                case 65:
+                    //upshifting
+                    if (currentGear < gears.length) {
+                        currentGear = gears[gearCounter] + gears[gearCounter + 1];
+                    } else {
+                        currentGear = gears[4];
+                    }
+                    break;
+                case 90:
+                    //downshifting
+                    if (currentGear > gears[0]) {
+                        currentGear = gears[gearCounter] + gears[gearCounter - 1];
+                    } else {
+                        currentGear = 0;
+                    }
                     break;
             }
         });
