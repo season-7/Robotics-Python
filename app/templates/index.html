@@ -7,17 +7,18 @@
     <!--css links-->
     <link rel="stylesheet" href="{{url_for('static', filename = 'css/foundation.min.css')}}">
     <link rel="stylesheet" href="{{url_for('static', filename ='css/app.css' )}}">
+    <link rel="stylesheet" media="only screen and (max-device-width:800px)" href="{{url_for('static', filename ='css/response.css' )}}">
     <!--font links-->
     <link href="https://fonts.googleapis.com/css?family=Bungee+Inline|Roboto+Mono" rel="stylesheet">
 </head>
 
 <body>
     <div class="container small-12 columns">
+        <header>
+            <img src="{{url_for('static', filename='img/logo.png')}}" alt="">
+            <h4>Pi Drive</h4>
+        </header>
         <div id="web">
-            <header>
-                <img src="{{url_for('static', filename='img/logo.png')}}" alt="">
-                <h4>Pi Drive</h4>
-            </header>
             <section id="camera" class="large-12 columns row expanded">
                 <video src="" autoplay controls></video>
             </section>
