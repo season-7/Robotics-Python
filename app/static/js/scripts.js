@@ -1,3 +1,7 @@
+//speed handling
+//gear variable
+var gears = [1, 2, 3, 4, 5];
+//ajax handling
 var action = {
     Action: function (index) {
         $.ajax('http://192.168.1.43:8000/pi/app/tasks/' + index, {
@@ -10,10 +14,51 @@ var action = {
                 console.log('error');
             }
         });
-    }
+    },
+    Gears: function (speed) {
+        $.ajax('http://192.168.1.35:8000/pi/app/tasks/gear' {
+            dataType: 'json',
+            success: function (response) {
+                console.log(response.description);
+            },
+            error: function (message) {
+                $('#response').html(message);
+                console.log('error');
+            },
+            data: {
+                currentGear: currentGear
+            }
+        });
+    };
 };
 
+//gear logic
+var currentGear = 0;
+var gearCounter = 0;
 $(document).ready(function () {
+    //keypress speed
+    $(document).on("keydown", function (w) {
+        switch (w.keyCode) {
+            case 65:
+                //upshifting
+                if (currentGear < gears.length) {
+                    currentGear = gears[gearCounter] + gears[gearCounter + 1];
+                } else {
+                    currentGear = gears[4];
+                }
+                break;
+            case 90:
+                //downshifting
+                if (currentGear > gears[0]) {
+                    currentGear = gears[gearCounter] + gears[gearCounter - 1];
+                } else {
+                    currentGear = 0;
+                }
+                break;
+        }
+    });
+
+    //media query function
     var mq = window.matchMedia("(max-device-width:800px)").matches;
     if (mq === false) {
         //key press function
@@ -32,7 +77,6 @@ $(document).ready(function () {
                     action.Action(4);
                     break;
             }
-            console.log(mq);
         });
     } else {
         //button press function
@@ -51,10 +95,6 @@ $(document).ready(function () {
         $('#reverse').on('taphold', function () {
             action.Action(4);
             console.log('sup sup');
-
         });
-        console.log(mq);
     }
-
-
 });
