@@ -1,10 +1,3 @@
-// var responseFunc = function (resp) {
-//     var message = $('<p></p>');
-//     message.append(resp.description);
-//     console.log(resp.description);
-//     $('#response').hide().html(message).fadeIn();
-// };
-
 var action = {
     Action: function (index) {
         $.ajax('http://192.168.1.35:8000/pi/app/tasks/' + index, {
