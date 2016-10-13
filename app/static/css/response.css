@@ -19,6 +19,18 @@ header h4 {
 
 /*navigation*/
 
+#navigation {
+    margin-top: 25%;
+}
 #navigation .button {
     font-size: 300%;
+}
+#turn {
+    margin: 10% 0;
+}
+#left {
+    margin-right: 10%;
+}
+#right {
+    margin-left: 10%;
 }
