@@ -6,53 +6,17 @@
 // };
 
 var action = {
-    leftAction: function () {
-        $.ajax('http://192.168.1.48:8000/pi/app/tasks/1', {
+    Action: function (index) {
+        $.ajax('http://192.168.1.35:8000/pi/app/tasks/' + index, {
             dataType: 'json',
             success: function (response) {
                 console.log(response.description);
             },
             error: function (message) {
-                $('#response').append().html(message);
-                console.log('new');
+                $('#response').html(message);
+                console.log('error');
             }
         });
-    },
-    rightAction: function () {
-        $.ajax('http://192.168.1.48:8000/pi/app/tasks/2', {
-            dataType: 'json',
-            success: function (response) {
-                console.log(response.description);
-            },
-            error: function (message) {
-                $('#response').append().html(message);
-                console.log('new');
-            }
-        })
-    },
-    forwardAction: function () {
-        $.ajax('http://192.168.1.48:8000/pi/app/tasks/3', {
-            dataType: 'json',
-            success: function (response) {
-                console.log(response.description);
-            },
-            error: function (message) {
-                $('#response').append().html(message);
-                console.log('new');
-            }
-        })
-    },
-    reverseAction: function () {
-        $.ajax('http://192.168.1.48:8000/pi/app/tasks/4', {
-            dataType: 'json',
-            success: function (response) {
-                console.log(response.description);
-            },
-            error: function (message) {
-                $('#response').append().html(message);
-                console.log('new');
-            }
-        })
     }
 };
 
@@ -61,16 +25,16 @@ $(document).ready(function() {
 	$(document).on('keydown', function (e) {
 	    switch (e.keyCode) {
             case 37:
-                action.leftAction();
+                action.Action(1);
                 break;
             case 38:
-                action.forwardAction();
+                action.Action(3);
                 break;
             case 39:
-                action.rightAction();
+                action.Action(2);
                 break;
             case 40:
-                action.reverseAction();
+                action.Action(4);
                 break;
         }
 
