@@ -17,7 +17,7 @@ var action = {
             }
         });
     },
-    Gears: function (speed=0) {
+    Gears: function (speed) {
         $.ajax('http://192.168.1.43:8000/pi/app/tasks/gear', {
             dataType: 'json',
             success: function (response) {
@@ -35,10 +35,7 @@ var action = {
     }
 };
 
-
 $(document).ready(function () {
-
-
     //media query function
     var mq = window.matchMedia("(max-device-width:800px)").matches;
     if (mq === false) {
