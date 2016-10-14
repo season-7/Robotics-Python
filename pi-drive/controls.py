@@ -87,7 +87,7 @@ def carSteer(steer):
 		pwm.stop()
 
 		# setCarSteering("")
-		
+
 	else:
 		pass
 
@@ -100,3 +100,74 @@ def changeSpeed(gear, speed):
 	pinB.ChangeDutyCycle(speed)
 
 	sleep(0.1)
+
+
+def carSpeed(gear, car_direction()):
+	global speed
+	if gear == 1:
+		if speed < 69:
+			speed = 70
+		
+		end_time = end_time(30)
+
+		while current_time() < end_time:
+			changeSpeed(gear, speed)
+
+			if speed < 80:
+				speed += 2
+			else:
+				speed -= 2
+
+			sleep(2)
+
+	elif gear == 2:
+		if speed < 79:
+			speed = 80
+		
+		end_time = end_time(30)
+
+		while current_time() < end_time:
+			changeSpeed(gear, speed)
+
+			if speed < 90:
+				speed += 2
+			else:
+				speed -= 2
+
+			sleep(2)
+
+	elif gear == 3:
+		if speed < 80:
+			speed = 50
+		
+		end_time = end_time(60)
+
+		while current_time() < end_time:
+			changeSpeed(gear, speed)
+
+			if speed < 100:
+				speed += 5
+
+			sleep(1)
+
+	elif gear == 4:
+		if speed < 90:
+			speed = 70
+		
+		end_time = end_time(60)
+
+		while current_time() < end_time:
+			changeSpeed(gear, speed)
+
+			if speed < 100:
+				speed += 5
+
+			sleep(1)
+
+	elif gear == 0:
+		speed = 70
+		changeSpeed(gear, speed)
+
+	else:
+		pass
+	
