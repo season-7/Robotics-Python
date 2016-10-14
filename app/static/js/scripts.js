@@ -92,5 +92,18 @@ $(document).ready(function () {
         $('#reverse').on('taphold', function () {
             action.Action(4);
         });
+        //showing current gear
+        $('#gear_up').on('taphold', function () {
+            currentGear++;
+            action.Gears(currentGear);
+            var nowGear = document.getElementById('now_gear');
+            nowGear.innerHTML = currentGear;
+        });
+        $('#gear_down').on('taphold', function () {
+            currentGear--;
+            action.Gears(currentGear);
+            var nowGear = document.getElementById('now_gear');
+            nowGear.innerHTML = currentGear;
+        });
     }
 });
