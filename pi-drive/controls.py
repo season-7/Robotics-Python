@@ -41,3 +41,13 @@ def end_time(secs):
 	tm = current_time()
 	start_time = datetime.datetime(100, 1, 1, tm.hour, tm.minute, tm.seconds)
 	return sys_time + datetime.timedelta(seconds = secs)
+
+
+def changeSpeed(gear, speed):
+	if gear is not 0:
+		pinA.ChangeDutyCycle(speed)
+		return
+
+	pinB.ChangeDutyCycle(speed)
+
+	sleep(0.1)
