@@ -21,3 +21,9 @@ def gpioInit():
 	GPIO.setup(enableA, GPIO.OUT)
 	GPIO.setup(enableA, GPIO.OUT)
 	GPIO.setup(enableA, GPIO.OUT)
+
+
+def pwmPin(gpioPin):
+	return GPIO.PWM(pwmPin, 1000)
+
+
