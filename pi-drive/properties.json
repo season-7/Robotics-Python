@@ -1,6 +1,1 @@
-{
-    "started": "false",
-    "direction": "Forward",
-    "speed": 20,
-    "steer": ""
-}
+{"direction": "Forward", "started": "false", "speed": 60, "steer": ""}
