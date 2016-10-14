@@ -1,7 +1,8 @@
 /*views*/
 
 #web,
-#mobile {
+#mobile,
+#gear_show {
     display: none;
 }
 #attention {
@@ -25,7 +26,8 @@ header h4 {
 
 @media only screen and (orientation:landscape) {
     /*displays*/
-    #mobile {
+    #mobile,
+    #gear_show {
         display: block;
     }
     #attention {
@@ -77,5 +79,10 @@ header h4 {
     }
     #gearbox .button:focus {
         background-color: hotpink;
+    }
+    /*showing gears*/
+    #gear_show {
+        top: 2%;
+        left: 45%;
     }
 }
