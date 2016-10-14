@@ -1,5 +1,6 @@
-/*ajax handling*/
+//ajax handling
 var action = {
+    //drive function
     Action: function (index) {
         $.ajax('http://192.168.1.43:8000/pi/app/tasks/' + index, {
             dataType: 'json',
@@ -7,13 +8,13 @@ var action = {
                 console.log(response.description);
             },
             error: function (message) {
-                $('#response').html(message);
                 console.log('error');
             }
         });
     },
+    // gears function
     Gears: function (speed) {
-        $.ajax('http://192.168.1.43:8000/pi/app/tasks/gear', {
+        $.ajax('http://127.0.0.1:8000/pi/app/tasks/gear', {
             dataType: 'json',
             success: function (response) {
                 console.log(response.description);
@@ -29,8 +30,8 @@ var action = {
         });
     }
 };
-/*speed handling*/
-//default gear
+
+// gear counter
 var currentGear = 0;
 
 $(document).ready(function () {
