@@ -43,6 +43,55 @@ def end_time(secs):
 	return sys_time + datetime.timedelta(seconds = secs)
 
 
+def forwardCar():
+	GPIO.output(enableA, True)
+	GPIO.output(enableA, False)
+	GPIO.output(enableA, True)
+
+	pinB.stop()
+	pinA.start(50)
+
+
+def reverseCar():
+	GPIO.output(enableA, True)
+	GPIO.output(enableA, False)
+	GPIO.output(enableA, True)
+
+	pinB.stop()
+	pinA.start(50)
+
+
+def carSteer(steer):
+	if steer == "Left":
+		pwm = GPIO.PWM(left, 1000)
+		pwm.start(100)
+
+		GPIO.output(enableB, True)
+		GPIO.output(right, False)
+
+		sleep(0.3)
+
+		pwm.stop()
+
+		# setCarSteering("")
+
+	elif steer == "Right":
+		pwm = GPIO.PWM(left, 1000)
+		pwm.start(100)
+
+		GPIO.output(enableB, True)
+		GPIO.output(right, False)
+
+		sleep(0.3)
+
+		pwm.stop()
+
+		# setCarSteering("")
+		
+	else:
+		pass
+
+
 def changeSpeed(gear, speed):
 	if gear is not 0:
 		pinA.ChangeDutyCycle(speed)
