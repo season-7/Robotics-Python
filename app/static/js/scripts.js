@@ -57,11 +57,10 @@ $(document).ready(function () {
                     if (currentGear < 5) {
                         currentGear++;
                         action.Gears(currentGear);
-                        alert(currentGear);
+                        $('#now_gear').html(currentGear);
                     } else {
                         currentGear = 5;
                         action.Gears(currentGear);
-                        alert(currentGear);
                     }
                     break;
                 case 90:
@@ -69,11 +68,10 @@ $(document).ready(function () {
                     if (currentGear > 0) {
                         currentGear--;
                         action.Gears(currentGear);
-                        alert(currentGear);
+                        $('#now_gear').html(currentGear);
                     } else {
                         currentGear = 0;
                         action.Gears(currentGear);
-                        alert(currentGear);
                     }
                     break;
             }
@@ -96,14 +94,12 @@ $(document).ready(function () {
         $('#gear_up').on('taphold', function () {
             currentGear++;
             action.Gears(currentGear);
-            var nowGear = document.getElementById('now_gear');
-            nowGear.innerHTML = currentGear;
+            $('#now_gear').html(currentGear);
         });
         $('#gear_down').on('taphold', function () {
             currentGear--;
             action.Gears(currentGear);
-            var nowGear = document.getElementById('now_gear');
-            nowGear.innerHTML = currentGear;
+            $('#now_gear').html(currentGear);
         });
     }
 });

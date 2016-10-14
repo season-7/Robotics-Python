@@ -30,3 +30,12 @@ video {
 #instruction {
     font-family: 'Roboto Mono', monospace;
 }
+#gear_show {
+    font-size: 500%;
+    position: absolute;
+    top: 30%;
+    left: 3%;
+}
+#gear_show h5 {
+    color: red;
+}
