@@ -3,7 +3,8 @@
 .container {
     text-align: center;
 }
-#mobile {
+#mobile,
+#attention {
     display: none;
 }
 

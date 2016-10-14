@@ -1,10 +1,14 @@
 /*views*/
 
-#web {
+#web,
+#mobile {
     display: none;
 }
-#mobile {
+#attention {
+    margin-top: 10%;
     display: block;
+    font-size: 250%;
+    font-family: 'Roboto Mono', monospace;
 }
 
 /*header*/
@@ -17,62 +21,61 @@ header h4 {
     font-size: 250%;
 }
 
-/*navigation*/
-
-#navigation {
-    margin-top: 20%;
-}
-#navigation .button {
-    background-color: hotpink;
-    font-size: 500%;
-    padding: 5% 15%;
-}
-#navigation .button:focus {
-    background-color: hotpink;
-}
-#turn {
-    margin: 12% 0;
-}
-#left {
-    margin-right: 12%;
-}
-#right {
-    margin-left: 12%;
-}
-
-/*link*/
-
-#link {
-    margin-top: 15%;
-}
-#link p {
-    font-size: 400%;
-}
-#link a {
-    color: hotpink;
-}
-
 /*landscape*/
 
 @media only screen and (orientation:landscape) {
+    /*displays*/
+    #mobile {
+        display: block;
+    }
+    #attention {
+        display: none;
+    }
+    /*global styling*/
+    .button {
+        font-family: 'Roboto Mono', monospace;
+    }
     /*header*/
     header {
         display: none;
     }
     /*navigation*/
     #navigation {
-        margin-top: 3%;
+        margin-top: 4%;
     }
     #navigation .button {
-        padding: 2% 10%;
+        background-color: hotpink;
+        font-size: 500%;
+        padding: 5% 12%;
+    }
+    #navigation .button:focus {
+        background-color: hotpink;
     }
     #turn {
         margin: 5% 0;
     }
     #left {
-        margin-right: 15%;
+        margin-right: 18%;
     }
     #right {
-        margin-left: 15%;
+        margin-left: 18%;
+    }
+    /*gearbox*/
+    #gearbox {}
+    #gear_up {
+        margin-top: 12%;
+        padding: 20% 18.5%;
+        margin-left: -15%;
+    }
+    #gear_down {
+        padding: 20% 14%;
+        margin-left: -15%;
+    }
+    #gearbox .button {
+        background-color: hotpink;
+        font-size: 200%;
+    }
+    #gearbox .button:focus {
+        background-color: hotpink;
     }
 }
