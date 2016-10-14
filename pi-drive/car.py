@@ -1,9 +1,24 @@
+import json
+
 class Car:
 
-    def __init__(self, started, direction, speed = 50 ):
+    def __init__(self, started="", direction="", speed = 50 ):
         self.__started = started
         self.__speed = speed
         self.__direction = direction
+
+
+    def car_properties(self):
+        with open('properties.json', 'r') as jsonFile:
+            car_data = json.load(jsonFile)
+
+            self.__started = car_data['started']
+            self.__speed = car_data['speed']
+            self.__direction = car_data['direction']
+
+
+    
+
 
     @property
     def started(self):
@@ -18,7 +33,9 @@ class Car:
         return self.__speed
   
 if __name__ == "__main__":
-    x = Car("True", "Forward-Left", 60 )
+    x = Car()
+    x.car_properties()
+
     print(x.started)
     print(x.direction)
     print(x.speed)
