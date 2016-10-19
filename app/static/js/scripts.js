@@ -2,7 +2,7 @@
 var action = {
     //drive function
     Action: function (index) {
-        $.ajax('http://192.168.1.43:8000/pi/app/tasks/' + index, {
+        $.ajax('http://192.168.1.21:8000/pi/app/tasks/' + index, {
             dataType: 'json',
             success: function (response) {
                 console.log(response.description);
@@ -14,7 +14,7 @@ var action = {
     },
     // gears function
     Gears: function (speed) {
-        $.ajax('http://127.0.0.1:8000/pi/app/tasks/gear', {
+        $.ajax('http://192.168.1.21:8000/pi/app/tasks/gear', {
             dataType: 'json',
             success: function (response) {
                 console.log(response.description);
@@ -33,6 +33,7 @@ var action = {
 
 // gear counter
 var currentGear = 0;
+$('#now_gear').html("N");
 
 $(document).ready(function () {
     //media query function
@@ -58,10 +59,11 @@ $(document).ready(function () {
                     if (currentGear < 4) {
                         currentGear++;
                         action.Gears(currentGear);
-                        $('#now_gear').html(currentGear);
-                    } else {
-                        currentGear = 5;
-                        action.Gears(currentGear);
+                        if (currentGear === 0) {
+                            $('#now_gear').html("N");
+                        } else {
+                            $('#now_gear').html(currentGear);
+                        }
                     }
                     break;
                 case 90:
@@ -69,9 +71,11 @@ $(document).ready(function () {
                     if (currentGear > -1) {
                         currentGear--;
                         action.Gears(currentGear);
-                        if (currentGear === -1){
+                        if (currentGear === -1) {
                             $('#now_gear').html("R");
-                        }else{
+                        } else if (currentGear === 0) {
+                            $('#now_gear').html("N");
+                        } else {
                             $('#now_gear').html(currentGear);
                         }
                     } else {
