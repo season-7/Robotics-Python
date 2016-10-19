@@ -19,15 +19,10 @@ header h4 {
     color: deeppink;
 }
 
-/*video feed*/
-
-video {
-    width: 70%;
-}
-
 /*instructions*/
 
 #instruction {
+    margin-top: 30%;
     font-family: 'Roboto Mono', monospace;
 }
 #gear_show {
