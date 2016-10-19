@@ -22,15 +22,14 @@ header h4 {
 /*instructions*/
 
 #instruction {
-    margin-top: 30%;
+    margin-top: 8%;
     font-family: 'Roboto Mono', monospace;
 }
 #gear_show {
+    margin-top: 8%;
     font-family: 'Roboto Mono', monospace;
     font-size: 500%;
-    position: absolute;
-    top: 30%;
-    left: 3%;
+
 }
 #gear_show h5 {
     color: red;
