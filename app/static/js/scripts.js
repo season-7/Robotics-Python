@@ -55,7 +55,7 @@ $(document).ready(function () {
                     break;
                 case 65:
                     //upshifting
-                    if (currentGear < 5) {
+                    if (currentGear < 4) {
                         currentGear++;
                         action.Gears(currentGear);
                         $('#now_gear').html(currentGear);
@@ -66,10 +66,14 @@ $(document).ready(function () {
                     break;
                 case 90:
                     //downshifting
-                    if (currentGear > 0) {
+                    if (currentGear > -1) {
                         currentGear--;
                         action.Gears(currentGear);
-                        $('#now_gear').html(currentGear);
+                        if (currentGear === -1){
+                            $('#now_gear').html("R");
+                        }else{
+                            $('#now_gear').html(currentGear);
+                        }
                     } else {
                         currentGear = 0;
                         action.Gears(currentGear);
